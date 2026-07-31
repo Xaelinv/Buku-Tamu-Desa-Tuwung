@@ -1,0 +1,1918 @@
+/* ==========================================================
+   BUKU TAMU DIGITAL DESA TUWUNG
+   ADMIN PANEL
+   PART 1 - ROOT • LAYOUT • SIDEBAR • HEADER • FOOTER
+========================================================== */
+
+/* ===========================
+   ROOT
+=========================== */
+
+:root{
+    --primary:#2E7D32;
+    --primary-dark:#1B5E20;
+    --primary-light:#EEF7EF;
+
+    --bg:#F4F6F9;
+    --white:#FFFFFF;
+
+    --text:#1F2937;
+    --text-light:#6B7280;
+
+    --border:#E5E7EB;
+
+    --shadow-sm:0 2px 10px rgba(0,0,0,.04);
+    --shadow:0 8px 24px rgba(0,0,0,.06);
+
+    --radius:16px;
+}
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    background:var(--bg);
+    font-family:"Segoe UI",sans-serif;
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    transition:.25s;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+/* ===========================
+   LAYOUT
+=========================== */
+
+.main-content{
+    margin-left:260px;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background:var(--bg);
+}
+
+.page{
+    flex:1;
+    padding:28px;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:260px;
+    height:100vh;
+
+    background:#fff;
+
+    border-right:1px solid var(--border);
+
+    display:flex;
+    flex-direction:column;
+
+    z-index:1000;
+}
+
+/* Logo */
+
+.sidebar-logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    padding:22px;
+
+    border-bottom:1px solid #EEF2F7;
+}
+
+.brand-logo{
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:#F7FFF8;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border:1px solid #E8F5E9;
+}
+
+.brand-logo img{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+}
+
+.brand-text h3{
+    margin:0;
+    font-size:18px;
+    font-weight:700;
+}
+
+.brand-text p{
+    margin:2px 0 0;
+    color:var(--text-light);
+    font-size:13px;
+}
+
+/* Menu */
+
+.sidebar-menu{
+    flex:1;
+    padding:18px 14px;
+}
+
+.sidebar-menu a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:13px 16px;
+
+    margin-bottom:8px;
+
+    color:var(--text);
+
+    border-radius:14px;
+
+    font-weight:500;
+}
+
+.sidebar-menu a i{
+    width:22px;
+    font-size:18px;
+}
+
+.sidebar-menu a:hover{
+    background:var(--primary-light);
+    color:var(--primary);
+}
+
+.sidebar-menu a.active{
+    background:var(--primary);
+    color:#fff;
+    box-shadow:0 8px 18px rgba(46,125,50,.18);
+}
+
+.sidebar-menu a.active i{
+    color:#fff;
+}
+
+/* Footer Sidebar */
+
+.sidebar-footer{
+    padding:20px;
+    border-top:1px solid var(--border);
+
+    text-align:center;
+
+    color:var(--text-light);
+    font-size:13px;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header{
+    background:#fff;
+
+    padding:22px 30px;
+
+    border-bottom:1px solid var(--border);
+
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.header>.d-flex{
+    width:100%;
+}
+
+.header h2{
+    margin:0;
+    font-size:30px;
+    font-weight:700;
+    color:var(--text);
+}
+
+.header p{
+    margin-top:5px;
+    color:var(--text-light);
+}
+
+.profile-btn{
+    width:46px;
+    height:46px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#F8FAFC;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:20px;
+
+    box-shadow:var(--shadow-sm);
+}
+
+.profile-btn:hover{
+    background:var(--primary-light);
+    color:var(--primary);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+    margin-top:auto;
+
+    background:#fff;
+
+    border-top:1px solid var(--border);
+
+    padding:18px;
+
+    text-align:center;
+
+    color:var(--text-light);
+
+    font-size:14px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+    .sidebar{
+        position:relative;
+        width:100%;
+        height:auto;
+    }
+
+    .main-content{
+        margin-left:0;
+    }
+
+    .page{
+        padding:20px;
+    }
+
+    .header{
+        padding:20px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .sidebar-logo{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .brand-text{
+        text-align:center;
+    }
+
+    .header h2{
+        font-size:24px;
+    }
+
+}
+/* ==========================================================
+   PART 2
+   CARD • BUTTON • FORM • TABLE • BADGE • PAGINATION
+========================================================== */
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+    border:none;
+    border-radius:18px;
+    background:#fff;
+    box-shadow:0 6px 20px rgba(15,23,42,.06);
+    overflow:hidden;
+    transition:.25s ease;
+}
+
+.card:hover{
+    box-shadow:0 12px 30px rgba(15,23,42,.08);
+}
+
+.card-header{
+    background:#fff;
+    border-bottom:1px solid #EEF2F7;
+    padding:18px 24px;
+    font-size:16px;
+    font-weight:600;
+}
+
+.card-body{
+    padding:24px;
+}
+
+/* ===========================
+   STAT CARD
+=========================== */
+
+.stat-card{
+    border:none;
+    border-radius:18px;
+    background:#fff;
+    box-shadow:0 6px 20px rgba(15,23,42,.06);
+    transition:.25s;
+    height:100%;
+}
+
+.stat-card:hover{
+    transform:translateY(-4px);
+}
+
+.stat-card .card-body{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.stat-card .icon{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    background:#EEF7EF;
+    color:#2E7D32;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+}
+
+.stat-title{
+    font-size:14px;
+    color:#6B7280;
+    font-weight:600;
+}
+
+.stat-value{
+    font-size:34px;
+    font-weight:700;
+    color:#111827;
+    line-height:1;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.btn{
+    border-radius:12px;
+    font-weight:600;
+    padding:10px 18px;
+    transition:.25s;
+}
+
+.btn-success,
+.btn-primary{
+    background:#2E7D32;
+    border-color:#2E7D32;
+}
+
+.btn-success:hover,
+.btn-primary:hover{
+    background:#256628;
+    border-color:#256628;
+}
+
+.btn-outline-secondary{
+    border-color:#D1D5DB;
+    color:#374151;
+}
+
+.btn-outline-secondary:hover{
+    background:#F3F4F6;
+    color:#111827;
+}
+
+.btn-danger{
+    border-radius:10px;
+}
+
+.btn-sm{
+    padding:6px 12px;
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.form-label{
+    font-weight:600;
+    margin-bottom:8px;
+    color:#374151;
+}
+
+.form-control,
+.form-select{
+    height:46px;
+    border-radius:12px;
+    border:1px solid #D1D5DB;
+    box-shadow:none;
+    padding:10px 14px;
+    transition:.25s;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color:#2E7D32;
+    box-shadow:0 0 0 .18rem rgba(46,125,50,.12);
+}
+
+.input-group-text{
+    border-radius:12px 0 0 12px;
+    border:1px solid #D1D5DB;
+    background:#fff;
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+.table{
+    margin-bottom:0;
+    vertical-align:middle;
+}
+
+.table thead th{
+    background:#F8FAFC;
+    color:#475569;
+    font-size:13px;
+    font-weight:600;
+    padding:16px;
+    border-bottom:1px solid #E5E7EB;
+    white-space:nowrap;
+}
+
+.table tbody td{
+    padding:16px;
+    color:#374151;
+}
+
+.table tbody tr{
+    transition:.2s;
+}
+
+.table tbody tr:hover{
+    background:#F9FBFC;
+}
+
+/* versi modern */
+
+.table-responsive{
+    border-radius:16px;
+    overflow-x:auto;
+    overflow-y:hidden;
+}
+
+.table-modern{
+    width:100%;
+    table-layout:auto;
+}
+
+.table-modern th{
+    font-weight:700;
+    white-space:nowrap;
+    padding:16px 14px;
+}
+
+.table-modern td{
+    vertical-align:middle;
+    padding:18px 14px;
+}
+
+/* ===========================
+   BADGE
+=========================== */
+
+.badge{
+    padding:7px 12px;
+    border-radius:999px;
+    font-weight:500;
+}
+
+.bg-success{
+    background:#2E7D32 !important;
+}
+
+.bg-success-subtle{
+    background:#EEF7EF !important;
+}
+
+.text-success{
+    color:#2E7D32 !important;
+}
+
+/* ===========================
+   ALERT
+=========================== */
+
+.alert{
+    border:none;
+    border-radius:14px;
+    padding:16px 18px;
+}
+
+.alert-success{
+    background:#EAF7ED;
+    color:#2E7D32;
+}
+
+.alert-danger{
+    background:#FDECEC;
+    color:#C62828;
+}
+
+.alert-info{
+    background:#EDF7FF;
+    color:#1565C0;
+}
+
+/* ===========================
+   MODAL
+=========================== */
+
+.modal-content{
+    border:none;
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.modal-header{
+    border-bottom:1px solid #EEF2F7;
+}
+
+.modal-footer{
+    border-top:1px solid #EEF2F7;
+}
+
+/* ===========================
+   PAGINATION
+=========================== */
+
+.pagination{
+    margin-bottom:0;
+    gap:4px;
+}
+
+.page-link{
+    border:none;
+    border-radius:10px;
+    color:#2E7D32;
+    min-width:38px;
+    text-align:center;
+}
+
+.page-link:hover{
+    background:#EEF7EF;
+    color:#2E7D32;
+}
+
+.page-item.active .page-link{
+    background:#2E7D32;
+    color:#fff;
+}
+
+/* ===========================
+   UTILITIES
+=========================== */
+
+.shadow-sm{
+    box-shadow:0 4px 15px rgba(0,0,0,.05)!important;
+}
+
+.shadow{
+    box-shadow:0 10px 30px rgba(0,0,0,.08)!important;
+}
+
+.rounded-xl{
+    border-radius:18px!important;
+}
+
+.cursor-pointer{
+    cursor:pointer;
+}
+
+.fw-semibold{
+    font-weight:600!important;
+}
+
+.text-primary{
+    color:#2E7D32!important;
+}
+
+.bg-primary{
+    background:#2E7D32!important;
+}
+/* ==========================================================
+   PART 3
+   DASHBOARD • STATISTIK • CHART • PROGRESS • EMPTY STATE
+========================================================== */
+
+/* ===========================
+   DASHBOARD
+=========================== */
+
+.dashboard-card{
+    border:none;
+    border-radius:18px;
+    background:#fff;
+    box-shadow:0 8px 24px rgba(15,23,42,.06);
+    transition:.25s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-4px);
+}
+
+.dashboard-card .card-body{
+    padding:24px;
+}
+
+/* ===========================
+   CHART
+=========================== */
+
+.chart-card{
+    border:none;
+    border-radius:18px;
+    background:#fff;
+    box-shadow:0 8px 24px rgba(15,23,42,.06);
+    overflow:hidden;
+}
+
+.chart-card .card-body{
+    padding:28px;
+}
+
+.chart-card h5{
+    font-size:18px;
+    font-weight:700;
+    color:#1F2937;
+}
+
+.chart-box{
+    position:relative;
+    width:100%;
+    height:340px;
+}
+
+.chart-box canvas{
+    width:100%!important;
+    height:100%!important;
+}
+
+/* ===========================
+   CARD STATISTIK
+=========================== */
+
+.stat-card .icon{
+    margin-bottom:8px;
+}
+
+.stat-card .stat-title{
+    margin-bottom:4px;
+}
+
+.stat-card .stat-value{
+    margin-bottom:0;
+}
+
+/* ===========================
+   PROGRESS BAR
+=========================== */
+
+.progress{
+    height:10px;
+    border-radius:999px;
+    background:#EEF2F7;
+    overflow:hidden;
+}
+
+.progress-bar{
+    background:#2E7D32;
+    border-radius:999px;
+    transition:width .4s ease;
+}
+
+/* ===========================
+   TOP INSTANSI
+=========================== */
+
+.top-instansi-card .card-body,
+.top-keperluan-card .card-body{
+    padding:24px;
+}
+
+.top-instansi-card h5,
+.top-keperluan-card h5{
+    font-weight:700;
+    margin-bottom:22px;
+}
+
+.top-instansi-card strong,
+.top-keperluan-card strong{
+    color:#1F2937;
+}
+
+/* ===========================
+   TOP PENGUNJUNG
+=========================== */
+
+.top-pengunjung-card{
+    min-height:420px;
+}
+
+.top-pengunjung-card .card-body{
+    padding:24px;
+}
+
+.top-pengunjung-card h5{
+    font-weight:700;
+}
+
+.top-pengunjung-card .border-bottom{
+    border-color:#EEF2F7!important;
+}
+
+.top-pengunjung-card .badge{
+    min-width:48px;
+    text-align:center;
+}
+
+/* ===========================
+   KATEGORI
+=========================== */
+
+.kategori-card{
+    min-height:420px;
+}
+
+.kategori-card .card-body{
+    padding:24px;
+}
+
+.kategori-card h5{
+    font-weight:700;
+}
+
+.kategori-item{
+    margin-bottom:22px;
+}
+
+.kategori-progress{
+    height:10px;
+}
+
+.kategori-badge{
+    border-radius:999px;
+    padding:6px 12px;
+    font-size:12px;
+}
+
+/* ===========================
+   TABLE DASHBOARD
+=========================== */
+
+.table-card{
+    border:none;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(15,23,42,.06);
+}
+
+.table-card table{
+    margin-bottom:0;
+}
+
+.table-card thead th{
+    background:#F8FAFC;
+    color:#475569;
+    font-size:13px;
+    font-weight:600;
+    padding:16px;
+}
+
+.table-card tbody td{
+    padding:16px;
+}
+
+.table-card tbody tr:hover{
+    background:#F9FBFC;
+}
+
+/* ===========================
+   SEARCH BOX
+=========================== */
+
+.search-box{
+    position:relative;
+}
+
+.search-box i{
+    position:absolute;
+    left:14px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#9CA3AF;
+}
+
+.search-box input{
+    padding-left:42px;
+}
+
+/* ===========================
+   FILTER
+=========================== */
+
+.filter-card{
+    margin-bottom:24px;
+}
+
+.filter-buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.btn-filter{
+    min-width:130px;
+}
+
+.btn-reset{
+    min-width:100px;
+}
+
+/* ===========================
+   EMPTY DATA
+=========================== */
+
+.empty-data{
+    text-align:center;
+    padding:70px 20px;
+    color:#6B7280;
+}
+
+.empty-data i{
+    font-size:58px;
+    margin-bottom:16px;
+    color:#9CA3AF;
+}
+
+.empty-data h5{
+    font-weight:700;
+    color:#374151;
+}
+
+.empty-data p{
+    margin-top:8px;
+    font-size:15px;
+}
+
+/* ===========================
+   PAGE TITLE
+=========================== */
+
+.page-title{
+    font-size:30px;
+    font-weight:700;
+    color:#1F2937;
+}
+
+.page-description{
+    color:#6B7280;
+    margin-top:6px;
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.card{
+    animation:fadeUp .35s ease;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+    .chart-box{
+        height:300px;
+    }
+
+    .stat-value{
+        font-size:30px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .chart-box{
+        height:250px;
+    }
+
+    .top-pengunjung-card,
+    .kategori-card{
+        min-height:auto;
+    }
+
+    .stat-value{
+        font-size:26px;
+    }
+
+    .filter-buttons{
+        flex-direction:column;
+    }
+
+    .btn-filter,
+    .btn-reset{
+        width:100%;
+    }
+
+}
+/* ==========================================================
+   PART 4
+   FINISHING • UTILITIES • SCROLLBAR • PRINT • RESPONSIVE
+========================================================== */
+
+/* ===========================
+   SPACING
+=========================== */
+
+.mt-30{
+    margin-top:30px;
+}
+
+.mb-30{
+    margin-bottom:30px;
+}
+
+.py-30{
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+.gap-20{
+    gap:20px;
+}
+
+/* ===========================
+   BORDER
+=========================== */
+
+.border-light{
+    border-color:#EEF2F7!important;
+}
+
+.rounded-xl{
+    border-radius:18px!important;
+}
+
+.rounded-xxl{
+    border-radius:24px!important;
+}
+
+/* ===========================
+   TRANSITION
+=========================== */
+
+.card,
+.btn,
+.form-control,
+.form-select,
+.page-link,
+.progress-bar,
+.badge{
+    transition:.25s ease;
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+.table td,
+.table th{
+    vertical-align:middle;
+}
+
+.table td small{
+    color:#6B7280;
+}
+
+.table-responsive{
+    border-radius:18px;
+    overflow:hidden;
+}
+
+/* ===========================
+   BUTTON GROUP
+=========================== */
+
+.btn-group>.btn{
+    border-radius:10px;
+}
+
+/* ===========================
+   PAGINATION
+=========================== */
+
+.pagination{
+    margin-top:20px;
+    justify-content:end;
+}
+
+.page-link{
+    width:40px;
+    height:40px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.page-item.disabled .page-link{
+    opacity:.5;
+}
+
+/* ===========================
+   DROPDOWN
+=========================== */
+
+.dropdown-menu{
+    border:none;
+    border-radius:16px;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+    overflow:hidden;
+}
+
+.dropdown-item{
+    padding:11px 18px;
+}
+
+.dropdown-item:hover{
+    background:#EEF7EF;
+    color:#2E7D32;
+}
+
+/* ===========================
+   MODAL TABLE
+=========================== */
+
+.modal table th{
+    width:220px;
+    color:#374151;
+    font-weight:600;
+}
+
+.modal table td{
+    color:#4B5563;
+}
+
+/* ===========================
+   LOADING
+=========================== */
+
+.loading{
+    opacity:.65;
+    pointer-events:none;
+}
+
+/* ===========================
+   EMPTY STATE
+=========================== */
+
+.empty-state{
+    padding:70px 20px;
+    text-align:center;
+    color:#6B7280;
+}
+
+.empty-state i{
+    font-size:58px;
+    margin-bottom:18px;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#F3F4F6;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#C7CDD4;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#9CA3AF;
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+body{
+    animation:fadeIn .3s ease;
+}
+
+/* ===========================
+   PRINT
+=========================== */
+
+@media print{
+
+    .sidebar,
+    .header,
+    .footer,
+    .btn,
+    .pagination,
+    .filter-buttons,
+    .dropdown,
+    .modal{
+        display:none!important;
+    }
+
+    .main-content{
+        margin-left:0!important;
+    }
+
+    .page{
+        padding:0!important;
+    }
+
+    .card{
+        box-shadow:none!important;
+        border:1px solid #ddd!important;
+    }
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1200px){
+
+    .page{
+        padding:24px;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .row>[class*="col-"]{
+        margin-bottom:20px;
+    }
+
+    .header{
+        padding:20px;
+    }
+
+    .card-body{
+        padding:20px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .page{
+        padding:16px;
+    }
+
+    .header h2{
+        font-size:22px;
+    }
+
+    .header p{
+        font-size:14px;
+    }
+
+    .card-body{
+        padding:18px;
+    }
+
+    .table{
+        font-size:14px;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .pagination{
+        justify-content:center;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .page{
+        padding:14px;
+    }
+
+    .stat-card .icon{
+        width:46px;
+        height:46px;
+    }
+
+    .stat-title{
+        font-size:13px;
+    }
+
+    .stat-value{
+        font-size:24px;
+    }
+
+    .chart-box{
+        height:220px;
+    }
+
+    .table{
+        font-size:13px;
+    }
+
+}
+
+/* ======================================================
+   DATA BUKU TAMU - FIX TABLE
+====================================================== */
+
+.table-modern{
+    width:100%;
+    table-layout:auto !important;
+}
+
+.table-modern th{
+    white-space:nowrap;
+    vertical-align:middle;
+    font-weight:700;
+}
+
+.table-modern td{
+    vertical-align:middle;
+}
+
+/* Hilangkan pembatas lebar yang bikin kolom terakhir hilang */
+.table-modern th,
+.table-modern td{
+    min-width:unset !important;
+    max-width:none !important;
+}
+
+/* =========================
+   Nama
+========================= */
+
+.nama-cell{
+    font-weight:700;
+    white-space:normal;
+    word-break:normal;
+    overflow-wrap:break-word;
+    line-height:1.45;
+}
+
+/* =========================
+   Instansi
+========================= */
+
+.instansi-cell{
+    white-space:normal;
+    overflow-wrap:break-word;
+    line-height:1.55;
+    color:#374151;
+}
+
+/* =========================
+   Wrap Cell
+========================= */
+
+.wrap-cell{
+    white-space:normal;
+    overflow-wrap:break-word;
+    line-height:1.55;
+}
+
+/* =========================
+   Pesan
+========================= */
+
+..pesan-cell{
+
+    width:220px;
+
+    min-width:220px;
+
+    max-width:220px;
+
+    line-height:1.5;
+
+    color:#374151;
+
+    cursor:pointer;
+
+    background:transparent !important;
+
+    border:none !important;
+
+    overflow:hidden;
+
+    display:-webkit-box;
+
+    -webkit-box-orient:vertical;
+
+    -webkit-line-clamp:2;
+
+    white-space:normal;
+
+    word-break:break-word;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.pesan-cell:hover{
+    color:#198754;
+}
+
+/* =========================
+   Tanggal
+========================= */
+
+.tanggal-box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    line-height:1.2;
+}
+
+.tanggal{
+    font-size:16px;
+    font-weight:700;
+    color:#1f2937;
+}
+
+.tahun{
+    font-size:16px;
+    font-weight:700;
+    color:#1f2937;
+}
+
+.jam{
+    margin-top:2px;
+    font-size:14px;
+    font-weight:500;
+    color:#6b7280;
+}
+
+/* =========================
+   Tombol Hapus
+========================= */
+
+..btn-delete{
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.btn-delete:hover{
+    background:#bb2d3b;
+    transform:scale(1.05);
+}
+
+/* =========================
+   Responsive
+========================= */
+
+.table-responsive{
+    overflow-x:auto;
+}
+
+.table-modern th,
+.table-modern td{
+    padding:14px 12px;
+}
+
+.table-modern td{
+
+    position:relative;
+
+    overflow:visible;
+
+}
+
+#deleteModal .modal-content{
+    border-radius:18px;
+}
+
+#deleteModal .modal-header{
+    padding:22px 22px 0;
+}
+
+#deleteModal .modal-body{
+    padding:10px 30px 25px;
+}
+
+#deleteModal .btn{
+    min-width:120px;
+    border-radius:10px;
+}
+
+#deleteModal .btn-danger{
+    background:#dc3545;
+    border:none;
+}
+
+#deleteModal .btn-danger:hover{
+    background:#bb2d3b;
+}
+
+#deleteModal .btn-light{
+    background:#f3f4f6;
+}
+
+/* ===========================================================
+   HALAMAN STATISTIK
+=========================================================== */
+
+.stat-card{
+    border:none;
+    border-radius:18px;
+    box-shadow:0 8px 24px rgba(15,23,42,.06);
+    transition:.25s ease;
+    overflow:hidden;
+}
+
+.stat-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 35px rgba(15,23,42,.12);
+}
+
+.stat-card .card-body{
+    padding:1.5rem;
+}
+
+.stat-title{
+    color:#64748B;
+    font-size:.95rem;
+    font-weight:500;
+    margin-bottom:10px;
+}
+
+.stat-value{
+    font-size:2.2rem;
+    font-weight:700;
+    color:#1E293B;
+    line-height:1;
+}
+
+.stat-icon{
+    width:58px;
+    height:58px;
+    border-radius:16px;
+    background:#E8F5E9;
+    color:#2E7D32;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+}
+
+/* ===========================================================
+   CARD
+=========================================================== */
+
+.card.rounded-4{
+    border-radius:18px !important;
+}
+
+.card{
+    border:none;
+}
+
+.card-header{
+    background:#fff !important;
+    border-bottom:1px solid #EEF2F7;
+}
+
+.card-header h5{
+    font-weight:700;
+    color:#1E293B;
+}
+
+/* ===========================================================
+   FILTER
+=========================================================== */
+
+.form-label{
+    font-weight:600;
+    color:#334155;
+}
+
+.form-control,
+.form-select{
+
+    min-height:46px;
+
+    border-radius:12px;
+
+    border:1px solid #D9E2EC;
+
+    transition:.2s;
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    border-color:#2E7D32;
+
+    box-shadow:0 0 0 .2rem rgba(46,125,50,.12);
+
+}
+
+/* ===========================================================
+   BUTTON
+=========================================================== */
+
+.btn{
+
+    border-radius:12px;
+
+    font-weight:600;
+
+}
+
+.btn-success{
+
+    background:#2E7D32;
+
+    border-color:#2E7D32;
+
+}
+
+.btn-success:hover{
+
+    background:#256728;
+
+    border-color:#256728;
+
+}
+
+/* ===========================================================
+   SECTION ICON
+=========================================================== */
+
+.section-icon{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:14px;
+
+    background:#E8F5E9;
+
+    color:#2E7D32;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:22px;
+
+    flex-shrink:0;
+
+}
+
+/* ===========================================================
+   CHART
+=========================================================== */
+
+.chart-icon{
+
+    width:54px;
+
+    height:54px;
+
+    border-radius:16px;
+
+    background:#E8F5E9;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#2E7D32;
+
+    font-size:24px;
+
+}
+
+canvas{
+
+    max-width:100%;
+
+}
+
+/* ===========================================================
+   PROGRESS BAR
+=========================================================== */
+
+.modern-progress{
+
+    height:10px;
+
+    background:#EDF2F7;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.modern-progress .progress-bar{
+
+    border-radius:50px;
+
+    background:#2E7D32;
+
+}
+
+/* ===========================================================
+   BADGE
+=========================================================== */
+
+.badge{
+
+    font-size:.8rem;
+
+    font-weight:600;
+
+    padding:.55rem .9rem;
+
+}
+
+/* ===========================================================
+   VISITOR LIST
+=========================================================== */
+
+.visitor-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 0;
+
+    border-bottom:1px solid #EEF2F7;
+
+}
+
+.visitor-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.ranking-number{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:#F8FAFC;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-right:14px;
+
+    color:#2E7D32;
+
+    font-weight:700;
+
+    font-size:18px;
+
+    flex-shrink:0;
+
+}
+
+/* ===========================================================
+   TABLE
+=========================================================== */
+
+.table{
+
+    margin-bottom:0;
+
+}
+
+.table thead th{
+
+    background:#F8FAFC;
+
+    border-bottom:1px solid #E2E8F0;
+
+    color:#475569;
+
+    font-weight:600;
+
+    font-size:.9rem;
+
+}
+
+.table tbody td{
+
+    vertical-align:middle;
+
+}
+
+/* ===========================================================
+   CARD TITLE
+=========================================================== */
+
+.card h5{
+
+    color:#1E293B;
+
+    font-weight:700;
+
+}
+
+.text-muted{
+
+    color:#64748B !important;
+
+}
+
+/* ===========================================================
+   RESPONSIVE
+=========================================================== */
+
+@media (max-width:991px){
+
+    .stat-value{
+
+        font-size:1.9rem;
+
+    }
+
+    .stat-icon{
+
+        width:50px;
+
+        height:50px;
+
+        font-size:22px;
+
+    }
+
+    .chart-icon{
+
+        width:48px;
+
+        height:48px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .card-body{
+
+        padding:1.2rem;
+
+    }
+
+    .section-icon{
+
+        width:46px;
+
+        height:46px;
+
+        font-size:20px;
+
+    }
+
+    .stat-value{
+
+        font-size:1.7rem;
+
+    }
+
+    .visitor-item{
+
+        align-items:flex-start;
+
+    }
+
+}
+
+/* ==========================================================
+   END OF ADMIN CSS
+========================================================== */
